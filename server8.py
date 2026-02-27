@@ -22,7 +22,7 @@ HTTP_PORT = 8080
 SAVE_DIR = "received_reports"
 DATABASE = "reports.db"
 USERNAME = "admin"
-PASSWORD = "antimalwaresoc@@2025!!"  
+PASSWORD = "<YOUR_SERVER_PASSWORD"  
 IP_LOG_FILE = "clients-ipaddr.txt"
 
 frames = [
