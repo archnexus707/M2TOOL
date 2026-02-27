@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Typing Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://wallpapers.com/images/high/black-panther-black-mac-akofov7ybf6i4my5.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: #00ff00;
+            font-family: monospace;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .terminal {
+            background: rgba(20, 20, 20, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            width: 80%;
+            max-width: 900px;
+            box-shadow: 0px 0px 15px 5px rgba(0, 255, 0, 0.5);
+        }
+
+        .line {
+            display: flex;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .caret {
+            width: 10px;
+            height: 18px;
+            background: #00ff00;
+            margin-left: 5px;
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                opacity: 1;
+            }
+            50.1%, 100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="line">
+            <span id="text"></span>
+            <div class="caret"></div>
+        </div>
+    </div>
+
+    <script>
+        const text = `Anti-malware, developed by AuxGrep, is a comprehensive cybersecurity solution designed to detect, prevent, and remove malicious software, offering robust protection against threats such as viruses, ransomware, and spyware. It incorporates a built-in watchdog feature to monitor system paths and detect unauthorized changes in real time. Leveraging advanced sandboxing technologies, it safely executes and analyzes potentially harmful files in isolated environments, enabling automatic removal of malware and termination of its associated processes. Additionally, it delivers detailed incident reports to administrators via an encrypted socket mechanism and provides real-time alerts through email, ensuring swift and effective threat response.`;
+        const typingSpeed = 70; // Adjust the typing speed (ms per character)
+        let index = 0;
+
+        function typeText() {
+            const textElement = document.getElementById("text");
+            if (index < text.length) {
+                textElement.textContent += text[index];
+                index++;
+                setTimeout(typeText, typingSpeed);
+            }
+        }
+
+        typeText();
+    </script>
+</body>
+</html>

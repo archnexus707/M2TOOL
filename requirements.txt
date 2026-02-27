@@ -1,0 +1,10 @@
+aiohttp
+colorama
+cryptography
+python-dotenv
+psutil
+requests
+resend
+rich
+virustotal-python
+watchdog
