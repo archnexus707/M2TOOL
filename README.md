@@ -2,6 +2,12 @@
 
 M2TOOL is a Python-based endpoint monitoring and reporting toolkit that watches a directory in real time, submits newly created or modified files to **VirusTotal** for analysis, and produces structured reports for local archiving and centralized SOC visibility.
 
+<div align="center">
+  <img src="docs/demo.jpeg" width="880" alt="M2TOOL in action">
+  <br>
+  <sub>M2TOOL in action: the endpoint agent (left) detects a malicious file and reports it, while the SOC Anti Malware Admin Panel (right) shows the received report.</sub>
+</div>
+
 The project includes:
 - an **Agent** (endpoint client) that monitors a directory, uploads files to VirusTotal, waits for analysis completion, and forwards the analysis report to a server
 - a **Server** (SOC receiver + web dashboard) that receives reports, stores them in SQLite, and exposes a lightweight HTTP dashboard
